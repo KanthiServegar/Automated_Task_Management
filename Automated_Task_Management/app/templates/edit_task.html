@@ -1,0 +1,38 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        Edit Task
+    </div>
+    <div class="card-body">
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Task Name</label>
+                <input type="text" id="name" class="form-control" name="name" value="{{ task.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" class="form-control" name="description" rows="4" required>{{ task.description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="due_date">Due Date</label>
+                <input type="date" id="due_date" class="form-control" name="due_date" value="{{ task.due_date }}" required>
+            </div>
+            <div class="form-group">
+                <label for="importance">Importance</label>
+                <select id="importance" class="form-control" name="importance" required>
+                    <option value="High" {% if task.importance == 'High' %}selected{% endif %}>High</option>
+                    <option value="Medium" {% if task.importance == 'Medium' %}selected{% endif %}>Medium</option>
+                    <option value="Low" {% if task.importance == 'Low' %}selected{% endif %}>Low</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Update Task</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

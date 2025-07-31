@@ -1,0 +1,73 @@
+/* Custom Styles */
+body {
+
+    font-family: 'Arial', sans-serif;
+
+
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+.container {
+    max-width: 800px;
+
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    background-color: black;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.card-body {
+    background-color: white;
+      background-image: url('../images/back.webp');
+    background-size: cover;  /* This ensures the image covers the entire background */
+    background-position: center;  /* This centers the image */
+    background-attachment: fixed;  /* This makes the background image stay fixed when you scroll */
+}
+
+input, textarea, select {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff;
+}
+
+.btn-primary {
+    background-color: black;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+/* Styling forms */
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 1rem;
+}

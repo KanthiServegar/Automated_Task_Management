@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ current_user.username }}</h1>
+
+    <a href="{{ url_for('main.create_task') }}">Add New Task</a>
+
+
+    <h3>Filter Tasks:</h3>
+    <button><a href="{{ url_for('main.home', filter='due_date') }}">Early Due Date</a></button>
+    <button><a href="{{ url_for('main.home', filter='importance') }}">Important</a></button>
+    <button><a href="{{ url_for('main.home', filter='critical') }}">Critical</a></button>
+
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <a href="{{ url_for('main_bp.edit_task', task_id=task.id) }}">{{ task.name }}</a>
+            <p>{{ task.due_date }} | {{ task.importance }} | {{ task.status }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
